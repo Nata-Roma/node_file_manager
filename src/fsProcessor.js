@@ -236,7 +236,7 @@ export class FSProcessor extends PathProcessor {
                 this.failedErrorOutput(currentDir);
             });
 
-            const copyPath = path.join(fileArchData.filePath, 'archive.gz');
+            const copyPath = path.join(fileArchData.filePath, `${fileData.fileName}.br`);
 
             const writableStream = fs.createWriteStream(copyPath);
             writableStream.on('error', (error) => {
@@ -275,7 +275,7 @@ export class FSProcessor extends PathProcessor {
                 this.failedErrorOutput(currentDir);
             });
 
-            const copyPath = path.join(fileData.filePath, 'decompressed.txt');
+            const copyPath = path.join(fileData.filePath, `${fileArchData.fileName.split('.').slice(0, -1).join('.')}`);
 
             const writableStream = fs.createWriteStream(copyPath);
             

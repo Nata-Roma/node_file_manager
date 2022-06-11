@@ -90,6 +90,7 @@ export class DirectoryProcessor extends DefaultProcessor {
     }
 
     getRootDir() {
+        console.log(path.parse('C:/users/Natalia/'));
         return path.parse(process.cwd()).root;
     }
 
